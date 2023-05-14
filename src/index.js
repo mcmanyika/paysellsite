@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import 'semantic-ui-css/semantic.min.css';
 
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
@@ -22,12 +23,10 @@ const ethereumClient = new EthereumClient(wagmiConfig, chains)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <>
       <WagmiConfig config={wagmiConfig}>
         <App />
       </WagmiConfig>
 
       <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
-    </>
   </React.StrictMode>
 );
